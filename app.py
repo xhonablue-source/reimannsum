@@ -113,7 +113,50 @@ Using Riemann Sums, how can you estimate the total distance without integrating?
 Try entering values like `a = 0`, `b = 10`, and increasing `n` to simulate higher-frequency data collection.
 """)
 
-# --- Cultural & Historical Roots ---
+
+# --- Expanded Cultural & Mathematical Roots ---
+with st.expander("🏺 Ancient Origins: Before Riemann – The Math Behind the Legacy", expanded=True):
+    st.markdown("""
+Mathematics did not begin with textbooks — it began with the **stars, stones, and stories** of ancient people.
+
+Long before Bernhard Riemann, many civilizations understood how to **partition space**, **estimate curved areas**, and use **discrete shapes to model the continuous**:
+
+---
+
+### 🌌 **Constellation Mapping → Angular Riemann Sums**
+- **Indigenous astronomers** in Africa, Mesoamerica, and Polynesia used **celestial arc lengths** to divide the sky and track time.
+- This mimics angular partitioning:  
+  $$ \sum f(\theta_i) \cdot \Delta\theta $$  
+- Conceptually related to the unit circle, radians, and trigonometric modeling.
+
+---
+
+### 🕌 **Arabic Architecture → Area Approximation by Tiling**
+- **Islamic architects** used **geometric tessellations** to fill and approximate curved domes.
+- Mathematically, this is like summing flat tiles under a curve:
+  $$ \sum f(x_i) \cdot \Delta x $$
+- Analogous to Riemann Sums with rectangles or trapezoids.
+
+---
+
+### 📐 **Egyptian & Babylonian Surveyors → Early Integration by Rectangles**
+- Ancient land surveyors used rope grids and rectangular decomposition.
+- Their method resembles the **Trapezoidal Rule**:
+  $$ \int_a^b f(x) dx \approx \frac{\Delta x}{2} \sum [f(x_{i-1}) + f(x_i)] $$
+
+---
+
+### 🏛️ **Greek Mathematicians → Geometry of Limits**
+- **Eudoxus** pioneered the **method of exhaustion** (precursor to limits), slicing shapes into triangles to estimate area.
+- **Archimedes** used infinitesimals to estimate the volume of spheres and parabolas, which laid the foundation for:
+  $$ \int f(x) dx $$
+- Greek geometry was not just shapes — it was **early calculus**.
+
+---
+
+Together, these cultures anticipated core integration ideas centuries before Riemann formalized them. You're not just learning modern math — you're continuing a global mathematical tradition!
+    """)
+
 st.header("🏺 Ancient Origins: Before Riemann")
 st.markdown("""
 Mathematics did not begin with textbooks — it began with the **stars, stones, and stories** of ancient people.
