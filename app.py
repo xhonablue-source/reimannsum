@@ -6,6 +6,33 @@ import matplotlib.pyplot as plt
 st.set_page_config(page_title="MathCraft: Riemann Sums", page_icon="📐", layout="wide")
 st.title("📐 MathCraft: Riemann Sums – Code the Area Under the Curve")
 st.markdown("*Developed by Xavier Honablue M.Ed for cognitivecloud.ai*")
+# --- Explanation Section ---
+st.header("🧮 What Do We Mean by ‘Code the Area’?")
+
+st.markdown("""
+In traditional calculus, we estimate the area under a curve using Riemann Sums — by drawing rectangles under the function and summing their areas.
+
+In this app, you're not just watching it happen — **you’re coding it interactively**:
+
+- You **choose** the function.
+- You **set** the start and end points (`a`, `b`).
+- You **adjust** the number of rectangles (**`n`**).
+- You **decide** if the sum is **Left**, **Right**, or **Midpoint**.
+
+Each decision generates:
+- a new graph of rectangles,
+- a new area approximation,
+- and the actual **Python code** behind it.
+
+---
+
+### 🧠 Why it matters
+
+This helps you understand how **math meets computer science**:
+
+> By using code to simulate calculus, you build intuition, precision, and real-world modeling skills — skills used in **physics**, **economics**, **AI**, and **data science**.
+""")
+
 
 # --- Explanation Section ---
 st.header("🧮 What Do We Mean by “Code the Area”?")
