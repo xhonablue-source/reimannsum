@@ -1,3 +1,30 @@
-streamlit
-numpy
-matplotlib
+# --- Core Dependencies ---
+streamlit>=1.33.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+
+# --- Optional: For data display, table manipulation, or future dashboards ---
+pandas>=2.1.0
+plotly>=5.18.0
+
+# --- Optional: For quizzes, text processing, or feedback forms ---
+markdown-it-py>=3.0.0
+streamlit-extras>=0.3.5
+
+# --- Optional: For future expansion into AI/LLM chat or lesson building ---
+openai>=1.11.0
+langchain>=0.1.13
+tiktoken>=0.5.1
+
+# --- Optional: For monitoring/logging/debugging ---
+rich>=13.3.5
+loguru>=0.7.0
+
+# --- Optional: For deployment and serving APIs (if needed) ---
+gunicorn>=21.2.0
+fastapi>=0.110.0
+uvicorn>=0.27.1
+
+# --- Optional Dev Tools ---
+black>=24.3.0
+flake8>=6.1.0
