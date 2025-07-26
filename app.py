@@ -7,6 +7,24 @@ st.set_page_config(page_title="MathCraft: Riemann Sums", page_icon="📐", layou
 st.title("📐 MathCraft: Riemann Sums – Code the Area Under the Curve")
 st.markdown("*Developed by Xavier Honablue M.Ed for cognitivecloud.ai*")
 
+# --- Explanation Section ---
+st.header("🧮 What Do We Mean by “Code the Area”?")
+st.markdown("""
+In traditional calculus, we estimate the area under a curve using Riemann Sums — by drawing rectangles under the function and summing their areas.
+
+In this app, you're not just watching it happen — **you’re coding it interactively**:
+
+- You **choose** the function.
+- You **set** the start and end points (`a`, `b`).
+- You **adjust** the number of rectangles (`n`).
+- You **decide** if the sum is Left, Right, or Midpoint.
+
+Each decision generates new calculations and visuals — and shows you **Python code** behind the scenes.
+
+### 🧠 Why it matters:
+This helps you understand how math meets computer science: by using **code to simulate calculus**, you build intuition, precision, and real-world modeling skills.
+""")
+
 # --- Sidebar ---
 st.sidebar.header("🔧 Customize Your Approximation")
 func_choice = st.sidebar.selectbox("Choose a function to model:", [
@@ -68,48 +86,127 @@ Using Riemann Sums, how can you estimate the total distance without integrating?
 Try entering values like `a = 0`, `b = 10`, and increasing `n` to simulate higher-frequency data collection.
 """)
 
-# --- Reveal Python Code (Optional) ---
-with st.expander("👨‍💻 Show me the Python code!"):
-    st.code(f"""
-# Function: {func_choice}
-a = {a}
-b = {b}
-n = {n}
-method = "{method}"
-
-dx = (b - a) / n
-# Choose x values
-if method == "Left":
-    x = np.linspace(a, b - dx, n)
-elif method == "Right":
-    x = np.linspace(a + dx, b, n)
-else:  # Midpoint
-    x = np.linspace(a + dx/2, b - dx/2, n)
-
-y = f(x)
-area = np.sum(y * dx)
-    """, language="python")
-
-# --- Common Core & CS Alignment ---
-with st.expander("🎯 Standards Alignment"):
-    st.markdown("""
-**Common Core Math:**
-- *F-IF.6*: Calculate and interpret the average rate of change of a function.
-- *N-Q.1-3*: Use units to solve problems.
-- *Modeling ★*: Apply mathematics to real-world problems.
-
-**Computer Science Connections:**
-- Algorithmic thinking: Approximate continuous quantities using loops.
-- Data Science: Simulating sensor data and estimation.
-- Numerical methods: Foundation for integral approximation.
-    """)
-
-# --- Reflection ---
-st.header("🧠 Reflect & Extend")
+# --- Cultural & Historical Roots ---
+st.header("🏺 Ancient Origins: Before Riemann")
 st.markdown("""
-- What happens to the approximation as you increase `n`?
-- Which method tends to **overestimate**? Which **underestimate**?
-- Why is this useful when programming robots or simulations?
+Mathematics did not begin with textbooks — it began with the **stars, stones, and stories** of ancient people.
 
-Try writing your own Python code to estimate other areas using `f(x) = sin(x²)` or real data!
+Long before Bernhard Riemann, many civilizations understood how to **partition space**, **estimate curved areas**, and use **discrete shapes to model the continuous**:
+
+### 🌌 Constellation Mapping
+- **Indigenous astronomers** in Africa, Mesoamerica, and Polynesia divided the sky into regions and used **celestial arc lengths** for navigation.
+
+### 🕌 Arabic Architecture
+- **Islamic architects** used intricate **tile tessellations** and **geometric repetition** to build domes — approximating curves with repeated flat forms.
+
+### 📐 Egyptian & Babylonian Surveyors
+- Used rectangular tools to measure land areas — much like early integration methods.
 """)
+
+# --- Standards Alignment ---
+st.header("🎓 Common Core & Historical Relevance")
+st.markdown("""
+### 📏 Common Core State Standards Addressed
+
+**High School – Functions**
+- **F-IF.6**: Calculate and interpret the average rate of change of a function over a specified interval.
+
+**High School – Number & Quantity**
+- **N-Q.1**: Use units to solve problems.
+- **N-Q.2**: Define quantities for modeling.
+- **N-Q.3**: Choose levels of accuracy.
+
+**High School – Modeling**
+- **Modeling with mathematics**: Solve real-world problems through modeling.
+
+---
+
+### 🏺 Global & Historical STEM Connections
+
+| Civilization         | Conceptual Link                         | Modern Equivalent          |
+|----------------------|------------------------------------------|-----------------------------|
+| Ancient Egyptians    | Rectangular partitions for land survey  | Left Riemann Sum            |
+| Islamic Geometers    | Repetitive shapes in domes/tiles        | Discrete approximation      |
+| African Astronomers  | Celestial partitions via arc lengths    | Interval subdivision        |
+| Babylonian Farmers   | Area under irrigation paths             | Integral estimates          |
+""")
+
+# --- Quiz Section ---
+st.header("🧪 Quiz Yourself!")
+score = 0
+
+with st.expander("🧠 Question 1: What does a Riemann Sum approximate?"):
+    q1 = st.radio("Choose one:", [
+        "The speed of an object at a single point",
+        "The slope of a tangent line",
+        "The average height of a function",
+        "The area under a curve"
+    ])
+    if q1 == "The area under a curve":
+        st.success("✅ Correct!")
+        score += 1
+    else:
+        st.error("❌ Nope! Riemann Sums estimate area under a curve.")
+
+with st.expander("🏺 Question 2: What ancient civilization used repeating geometric patterns to model domes?"):
+    q2 = st.radio("Choose one:", [
+        "Aztec",
+        "Islamic (Arabic)",
+        "Inca",
+        "Greek"
+    ])
+    if q2 == "Islamic (Arabic)":
+        st.success("✅ Correct!")
+        score += 1
+    else:
+        st.error("❌ Try again. These appear in Arabic architecture and tile design.")
+
+with st.expander("📏 Question 3: What Common Core standard is most directly aligned with using Riemann Sums?"):
+    q3 = st.radio("Choose one:", [
+        "N-Q.1: Use units in multi-step problems",
+        "F-IF.6: Interpret average rate of change",
+        "G-CO.1: Know precise definitions of geometric terms",
+        "A-REI.3: Solve linear equations"
+    ])
+    if q3 == "F-IF.6: Interpret average rate of change":
+        st.success("✅ Correct!")
+        score += 1
+    else:
+        st.error("❌ Nope! F-IF.6 deals with function change — perfect fit.")
+
+with st.expander("🌍 Question 4: Indigenous astronomers divided the sky into parts to track stars. What modern concept does this resemble?"):
+    q4 = st.radio("Choose one:", [
+        "Algebraic factoring",
+        "Interval partitioning",
+        "Volume calculation",
+        "Slope finding"
+    ])
+    if q4 == "Interval partitioning":
+        st.success("✅ Yes! Partitioning time/space is central to Riemann Sums.")
+        score += 1
+    else:
+        st.error("❌ Think about splitting up data into pieces...")
+
+with st.expander("🔢 Question 5: What happens when you increase the number of rectangles (n) in a Riemann Sum?"):
+    q5 = st.radio("Choose one:", [
+        "The estimate becomes worse",
+        "The rectangles disappear",
+        "The estimate gets more accurate",
+        "The function becomes linear"
+    ])
+    if q5 == "The estimate gets more accurate":
+        st.success("✅ Exactly! More rectangles = better precision.")
+        score += 1
+    else:
+        st.error("❌ Nope! Riemann Sums get more accurate as n increases.")
+
+# Final Score
+st.markdown("---")
+st.subheader(f"🎉 Your Score: {score}/5")
+if score == 5:
+    st.balloons()
+    st.success("Incredible! You’re a Riemann Master!")
+elif score >= 3:
+    st.info("Nice work! Review a bit more and you'll master this.")
+else:
+    st.warning("Keep practicing — try re-reading the sections above!")
