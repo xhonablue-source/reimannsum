@@ -280,3 +280,53 @@ elif score >= 3:
     st.info("Nice work! Review a bit more and you'll master this.")
 else:
     st.warning("Keep practicing — try re-reading the sections above!")
+
+
+# --- Greek Symbols and Notation Breakdown ---
+with st.expander("🔤 Understanding the Greek Math Symbols in Integration", expanded=False):
+    st.markdown("""
+Math uses symbols from the **Greek alphabet** because ancient Greek mathematicians were some of the first to formalize geometry and logic.
+
+Here’s what these symbols mean in modern integration:
+
+---
+
+### **Σ (Sigma)** → "Sum"
+- **Greek capital letter Sigma**
+- Tells you to **add up** all the terms
+- Example:  
+  $$ \sum_{i=1}^{n} f(x_i) \cdot \Delta x $$  
+  → Add up all the rectangles' areas
+
+---
+
+### **Δ (Delta)** → "Change" or "Width"
+- **Greek capital letter Delta**
+- Represents a **change** in a quantity  
+- In Riemann Sums:  
+  $$ \Delta x $$  
+  is the **width** of each rectangle
+
+---
+
+### **θ (Theta)** → An angle
+- Common in trigonometry or astronomy  
+- $$ \sum f(\theta_i) \cdot \Delta\theta $$  
+  is just like summing values over slices of a circle
+
+---
+
+### **π (Pi)** → The ratio of a circle’s circumference to diameter
+- Appears in angular models and volume formulas  
+- Constant:  
+  $$ \pi \approx 3.14159 $$
+
+---
+
+### **∫ (Integral symbol)** → "Continuous sum"
+- This is like Sigma (Σ) **but for curved, continuous data**
+- It tells you to **sum infinitely many tiny areas**:
+  $$ \int_a^b f(x) dx $$
+
+This is why integration is like **Sigma’s smooth cousin** — same idea, just more refined!
+""")
